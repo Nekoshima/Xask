@@ -1,29 +1,29 @@
-<h1>Listing questions</h1>
+<h1 class="page-header">Questions</h1>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Body</th>
-    <th>Status</th>
-    <th>Asked on</th>
-    <th>Asked by</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Status</th>
+      <th>Asked on</th>
+      <th>Asked by</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
 
-<% @questions.each do |question| %>
-  <tr>
-    <td><%= question.title %></td>
-    <td><%= question.body %></td>
-    <td><%= question.status %></td>
-    <td><%= question.asked_on %></td>
-    <td><%= question.asked_by %></td>
-    <td><%= link_to 'Show', question %></td>
-    <td><%= link_to 'Edit', edit_question_path(question) %></td>
-    <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
+  <tbody>
+    <% @questions.each do |question| %>
+      <tr>
+        <td><%= link_to question.title, question %></td>
+        <td><%= question.status %></td>
+        <td><%= question.asked_on %></td>
+        <td><%= question.asked_by %></td>
+        <td><%= link_to 'Edit', edit_question_path(question) %></td>
+        <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
 
 <br />

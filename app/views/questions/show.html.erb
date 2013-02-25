@@ -1,26 +1,17 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Title:</b>
-  <%= @question.title %>
-</p>
+<div class="well">
+<h1><%= @question.title %></h1>
 
-<p>
-  <b>Body:</b>
+<% if @question.body =~ /\w/%>
   <%= @question.body %>
-</p>
-
+<% end %>
+</div>
 <p>
   <b>Status:</b>
-  <%= @question.status %>
-</p>
-
-<p>
+  <%= @question.status %> |
   <b>Asked on:</b>
-  <%= @question.asked_on %>
-</p>
-
-<p>
+  <%= @question.asked_on %> |
   <b>Asked by:</b>
   <%= @question.asked_by %>
 </p>

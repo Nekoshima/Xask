@@ -2,13 +2,14 @@
 <html>
 <head>
   <title>Xask</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
+  <%= stylesheet_link_tag  "bootstrap.css" ,"todc-bootstrap.css", "bootstrap-responsive.min.css" %>
+  <%= javascript_include_tag "jquery-1.9.1.min.js", "bootstrap.min.js" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+  <%= render partial: 'layouts/top_nav' %>
+  <div class="container">
+    <%= yield %>
+  </div>
 </body>
 </html>
